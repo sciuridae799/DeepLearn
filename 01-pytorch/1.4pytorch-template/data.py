@@ -7,6 +7,8 @@ from torch.utils.data import random_split
 
 def dataloader(batch_size=32, root='./01-pytorch/1.4pytorch-template/data', split=(0.7, 0.15, 0.15)):
     transform = transforms.Compose([
+        transforms.RandomResizedCrop(224),
+        transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])

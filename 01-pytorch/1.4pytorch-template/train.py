@@ -36,10 +36,10 @@ model = model.to(device)
 
 # 损失函数和优化器
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-4)
 
 # TensorBoard可视化
-log_dir = './01-pytorch/1.4pytorch-template'  # 日志目录
+log_dir = './01-pytorch/1.4pytorch-template/runs'  # 日志目录
 writer = SummaryWriter(log_dir=log_dir)
 
 
